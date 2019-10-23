@@ -4,7 +4,7 @@
 #
 Name     : R-logcondens
 Version  : 2.1.5
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/logcondens_2.1.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/logcondens_2.1.5.tar.gz
 Summary  : Estimate a Log-Concave Probability Density from Iid Observations
@@ -13,6 +13,7 @@ License  : GPL-2.0+
 Requires: R-ks
 BuildRequires : R-ks
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -24,13 +25,13 @@ No detailed description available
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1560139485
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571856986
 
 %install
-export SOURCE_DATE_EPOCH=1560139485
+export SOURCE_DATE_EPOCH=1571856986
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -59,7 +60,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
