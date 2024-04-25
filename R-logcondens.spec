@@ -5,7 +5,7 @@
 #
 Name     : R-logcondens
 Version  : 2.1.8
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/logcondens_2.1.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/logcondens_2.1.8.tar.gz
 Summary  : Estimate a Log-Concave Probability Density from Iid Observations
